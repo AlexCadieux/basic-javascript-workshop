@@ -78,15 +78,56 @@ function calculator(operation, num1, num2) {
 }
 
 function repeatString(inputString, numRepetitions) {
-
+    if (typeof inputString === "string" && typeof numRepetitions === "number") {
+        if (numRepetitions <=  0 || inputString.length === 0) {
+            return "";
+        }
+        
+        else {
+            var stringRepeated = ""
+            for (var i = 0; i< numRepetitions; i++) {
+                stringRepeated += inputString;
+            }
+            return stringRepeated;
+        }
+    }
+    
+    else {
+        return undefined;
+    }
 }
 
 function reverseString(inputString) {
-
+    if (typeof inputString === "string") {
+        var stringReversed = ""
+        for (var i = inputString.length -1; i >= 0; i--) {
+            stringReversed += inputString[i];
+        }
+        return stringReversed;
+    }
+    
+    else {
+        return undefined;
+    }
 }
 
 function longestWord(inputString) {
-
+    if (inputString.length === 0) {
+        return "";
+    }
+    
+    else {
+        var splitString = inputString.split(" " || "," || ";");
+        var longest = 0;
+        var word = null;
+        for (var i = 0; i < splitString.length; i++) {
+            if (longest < splitString[i].length) {
+                longest = splitString[i].length;
+                word = splitString[i];
+            }
+        }
+        return word;
+    }
 }
 
 function capitalize(inputString) {
