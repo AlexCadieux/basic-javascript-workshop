@@ -147,7 +147,29 @@ function capitalize(inputString) {
 }
 
 function sumOfNumbers(arrayOfNumbers) {
-
+    if (Array.isArray(arrayOfNumbers)) {
+        if (arrayOfNumbers.length === 0) {
+            return 0;
+        }
+        
+        else {
+            var sum = 0;
+            for (var i=0; i < arrayOfNumbers.length; i++) {
+                if (typeof arrayOfNumbers[i] === "number") {
+                    sum += arrayOfNumbers[i];
+                }
+                
+                else {
+                    return undefined;
+                }
+            }
+            return sum;
+        }
+    }
+    
+    else {
+        return undefined;
+    }
 }
 
 function uniqueElements(array1, array2) {
