@@ -173,11 +173,56 @@ function sumOfNumbers(arrayOfNumbers) {
 }
 
 function uniqueElements(array1, array2) {
-
+    if(Array.isArray(array1) && Array.isArray(array2)) {
+        var uniqueArray = [];
+        for (var i = 0; i < array1.length; i++) {
+            var isUnique = true
+            for (var j = 0; j < array2.length; j++) {
+                if (array1[i] == array2[j]) {
+                    isUnique = false
+                }
+            }
+            
+            if (isUnique) {
+                
+                uniqueArray.push(array1[i]);
+            }
+        }
+        
+        for (var i = 0; i < array2.length; i++) {
+            var isUnique = true
+            for (var j = 0; j < array1.length; j++) {
+                if (array2[i] == array1[j]) {
+                    isUnique = false
+                }
+            }
+            
+            if (isUnique) {
+                uniqueArray.push(array2[i]);
+            }
+        }
+        
+        return uniqueArray;
+    }
+    
+    else {
+        return undefined;
+    }
 }
 
 function isPalindrome(inputString) {
-
+    inputString = inputString.replace(/\W+/g, " ").split(" ").join("").toLowerCase()    
+    var reverseString = ""
+    for (var i = inputString.length -1; i >= 0; i--) {
+        reverseString += inputString[i];
+    }
+    if (inputString == reverseString) {
+        return true;
+    }
+    
+    else {
+        return false;
+    }
 }
 
 function wrapCharacter(inputString) {
