@@ -1,9 +1,21 @@
 function firstLetter(inputString) {
-    return inputString[0]
+    if (typeof inputString === "string") {
+        return inputString[0];
+    } 
+    
+    else {
+        return undefined;
+    }
 }
 
 function lastLetter(inputString) {
-    return inputString[inputString.length - 1]
+    if (typeof inputString === "string") {
+        return inputString[inputString.length - 1];
+    } 
+    
+    else {
+        return undefined;
+    }
 }
 
 function letterAtPosition(inputString, position) {
