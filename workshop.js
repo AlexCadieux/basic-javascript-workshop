@@ -38,14 +38,43 @@ function addTwoNumbers(num1, num2) {
     }
 }
 
-
-
 function multiplyTwoNumbers(num1, num2) {
-
+    if (typeof (num1, num2) === "number") {
+        return num1 * num2;
+    }
+    
+    else {
+        return undefined;
+    }
 }
 
 function calculator(operation, num1, num2) {
-
+    if (typeof (num1, num2) === "number") {
+        switch(operation) {
+            case "add":
+                return num1 + num2;
+                break;
+                
+            case "sub":
+                return num1 - num2;
+                break;
+            
+            case "mult":
+                return num1 * num2;
+                break;
+                
+            case "div":
+                return num1 / num2;
+                break;
+                
+            default:
+                return undefined;
+        }
+    }
+    
+    else {
+        return undefined;
+    }
 }
 
 function repeatString(inputString, numRepetitions) {
