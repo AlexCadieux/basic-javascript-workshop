@@ -19,7 +19,13 @@ function lastLetter(inputString) {
 }
 
 function letterAtPosition(inputString, position) {
-
+    if (typeof inputString === "string" && typeof position === "number") {
+        return inputString[position];
+    }
+    
+    else {
+        return undefined;
+    }
 }
 
 function addTwoNumbers(num1, num2) {
