@@ -226,7 +226,35 @@ function isPalindrome(inputString) {
 }
 
 function wrapCharacter(inputString) {
-
+    var result = '';
+    var arr = inputString.split("")
+    
+    for (var i = 0; i<arr.length; i++) {
+        if(i%40===0 && i>0) {
+            if(arr[i]=== " ") {
+                arr[i] = "\n"
+            }
+            else{
+                arr[i] += "\n"
+            }
+        }
+    }
+    
+    return arr.join("")
+    
+    // while (inputString.length >= 40) {
+    //     if (inputString[41] !== " ") {
+    //     result += inputString.substring(0, 40) + '\n';
+    //     inputString = inputString.substring(41);
+    //     }
+        
+    //     else {
+    //         result += inputString.substring(0, 40) + '\n';
+    //         inputString = inputString.substring(40);
+    //     }
+    // }
+    // result += inputString.substring(0);
+    return result;
 }
 
 function wrapWord(inputString) {
